@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  price_per_night: 1.5
+  name: MyString
+  location: MyString
+  capacity: 1
+  description: MyText
+  user: one
+
+two:
+  price_per_night: 1.5
+  name: MyString
+  location: MyString
+  capacity: 1
+  description: MyText
+  user: two
