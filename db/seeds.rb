@@ -11,9 +11,9 @@ require 'open-uri'
 require 'json'
 
 puts 'Cleaning up database...'
+Booking.destroy_all
 Flat.destroy_all
 User.destroy_all
-Booking.destroy_all
 puts 'Database cleaned'
 
 
@@ -34,7 +34,7 @@ flat_1 = Flat.new(
   price_per_night: 75,
   capacity: 3,
   user: User.first
-)
+) 
 
 pic_1 = URI.open("https://images.unsplash.com/photo-1494526585095-c41746248156?w=1200")
 pic_12 = URI.open("https://images.unsplash.com/photo-1558981082-c7d43331cd8c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1015&q=80")

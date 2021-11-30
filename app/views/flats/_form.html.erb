@@ -1,0 +1,9 @@
+<%= simple_form_for(flat) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :description %>
+  <%= f.input :location %>
+  <%= f.input :capacity, as: :integer, input_html: { min: '1', max: '100', step: '1' } %>
+  <%= f.input :price_per_night, as: :float, input_html: { min: '0' } %>
+  <%= f.input :photos, input_html: { multiple: true } %>
+  <%= f.submit %>
+<% end %>
