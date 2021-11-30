@@ -5,6 +5,13 @@ class BookingsController < ApplicationController
   end
 
   def update
-    raise
+    @booking = Booking.find(params[:id])
+
+    if @booking.update(status: params[:status])
+      redirect_to dashboard_path
+    else
+      render 'dashboard'
+    end
   end
+
 end
