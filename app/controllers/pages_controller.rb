@@ -1,11 +1,15 @@
 class PagesController < ApplicationController
 
   def home
+    if user_signed_in?
+      redirect_to flats_path
+    end
+    
     if params[:query].present?
       @query = params[:query]
       @flats = Flat.where("name iLike '%#{params[:query]}%'")
     else
-      @flats = Flat.all
+      @flats = Flat.all.first(3)
     end
   end
 
