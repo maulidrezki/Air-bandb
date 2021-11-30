@@ -1,0 +1,32 @@
+
+<div class="container">
+  <h1 class="title mt-3" style="text-align: center;">Dashboard</h1>
+
+  <h2 class="title mb-3"> My Bookings </h2>
+  <% @my_booking.each do |booking| %>
+    <div class="card-product mb-3">
+      <%= cl_image_tag booking.flat.photos.first.key %>
+      <div class="card-product-infos">
+        <h2> <%= booking.flat.name %> </h2>
+        <h5> <%= booking.status %> </h3>
+        <p><%= booking.start_date %> ~ <%= booking.end_date %></p>
+        <%= link_to "Accept", booking_path(booking, status: "confirmed"), method: :patch %>
+        <%= link_to "Reject", booking_path(booking, status: "rejected"), method: :patch %>
+      </div>
+    </div>
+  <% end %>
+
+  <hr>
+
+  <h2 class="title mb-3"> My flat's Bookings </h2>
+  <% @bookings.each do |booking| %>
+    <div class="card-product mb-3">
+      <%= cl_image_tag booking.flat.photos.first.key %>
+      <div class="card-product-infos">
+        <h2> <%= booking.flat.name %> </h2>
+        <h5> <%= booking.status %> </h3>
+        <p><%= booking.start_date %> ~ <%= booking.end_date %></p>
+      </div>
+    </div>
+  <% end %>
+</div>

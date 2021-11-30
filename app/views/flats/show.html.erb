@@ -1,1 +1,57 @@
-<h1>HELLLOOOO</h1>
+<div class="container mt-3">
+<div>
+  <div class="row">
+    <div class="col-12">
+      <h1>Flat Details</h1>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <h2><strong> <%= @flat.name %></h2>
+    </div>
+  </div>
+  </div>
+
+
+  <div class="container mt-3">
+    <div class="row">
+      <div class="flat-card">
+        <h3>A bit more about this flat...</h3>
+        <p><%= @flat.name %></p>
+        <p><%= @flat.price_per_night %></p>
+        <p><%= @flat.location%></p>
+        <p><%= @flat.capacity %></p>
+        <p><%= @flat.description %></p>
+        <div class="row" style="height:300px">
+        <div class="col-<%= @flat.photos.second.nil? ? "12" : "6" %>">
+          <div class="flat-pictures" style="background-image: url('<%= cl_image_path @flat.photos.first.key %>')"></div>
+         </div>
+         <div class="col-6">
+          <div class="row">
+          <%unless @flat.photos.second.nil?%>
+          <div class="col-<%= @flat.photos.third.nil? ? "12" : "6" %>">
+            <div class="flat-pictures" style="background-image: url('<%= cl_image_path @flat.photos.second.key %>')"></div>
+          </div>
+          <%end%>
+          <%unless @flat.photos.third.nil?%>
+          <div class="col-6">
+            <div class="flat-pictures" style="background-image: url('<%= cl_image_path @flat.photos.third.key %>')"></div>
+          </div>
+          <%end%>
+          <%unless @flat.photos.fourth.nil?%>
+          <div class="col-6">
+            <div class="flat-pictures" style="background-image: url('<%= cl_image_path @flat.photos.fourth.key %>')"></div>
+          </div>
+          <%end%>
+          <%unless @flat.photos.fifth.nil?%>
+          <div class="col-6">
+            <div class="flat-pictures" style="background-image: url('<%= cl_image_path @flat.photos.fifth.key %>')"></div>
+          </div>
+          <%end%>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
