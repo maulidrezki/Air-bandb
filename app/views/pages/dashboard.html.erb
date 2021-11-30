@@ -1,0 +1,25 @@
+<h1 class="title" style="text-align: center;">Dashboard</h1>
+
+<% @my_booking.each do |booking| %>
+  <div class="card-product p-3">
+    <%= cl_image_tag booking.flat.photos.first.key %>
+    <div class="card-product-infos">
+      <h2> <%= booking.flat.name %> </h2>
+      <h5> <%= booking.status %> </h3>
+      <p><%= booking.start_date %> ~ <%= booking.end_date %></p>
+    </div>
+  </div>
+<% end %>
+
+<hr>
+
+<% @bookings.each do |booking| %>
+  <div class="card-product p-3">
+    <%= cl_image_tag booking.flat.photos.first.key %>
+    <div class="card-product-infos">
+      <h2> <%= booking.flat.name %> </h2>
+      <h5> <%= booking.status %> </h3>
+      <p><%= booking.start_date %> ~ <%= booking.end_date %></p>
+    </div>
+  </div>
+<% end %>
