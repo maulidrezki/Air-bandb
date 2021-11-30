@@ -10,6 +10,8 @@
         <h2> <%= booking.flat.name %> </h2>
         <h5> <%= booking.status %> </h3>
         <p><%= booking.start_date %> ~ <%= booking.end_date %></p>
+        <%= link_to "Accept", booking_path(booking, status: "confirmed"), method: :patch %>
+        <%= link_to "Reject", booking_path(booking, status: "rejected"), method: :patch %>
       </div>
     </div>
   <% end %>
