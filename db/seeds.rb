@@ -34,7 +34,7 @@ flat_1 = Flat.new(
   price_per_night: 75,
   capacity: 3,
   user: User.first
-)
+) 
 
 pic_1 = URI.open("https://images.unsplash.com/photo-1494526585095-c41746248156?w=1200")
 flat_1.photos.attach(io: pic_1, filename: "1.jpg", content_type: "image/jpg")
