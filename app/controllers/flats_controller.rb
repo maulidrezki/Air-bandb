@@ -23,7 +23,23 @@ class FlatsController < ApplicationController
   end
 
   def show
+    @flat = Flat.find(params[:flat_id])
+  end
+
+  def edit
     @flat = Flat.find(params[:id])
+  end
+
+  def update
+    @flat = Flat.find(params[:id])
+    @flat.update(flat_params)
+    redirect_to flat_path(@flat)
+  end
+
+  def destroy
+    @flat = Flat.find(params[:id])
+    @flat.destroy
+    redirect_to flats_path
   end
 
   private
