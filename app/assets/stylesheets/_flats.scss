@@ -72,3 +72,13 @@
   background-size: cover;
   background-position: bottom;
 }
+
+.main-container {
+  display: flex;
+  flex-grow: 1;
+}
+
+.booking-page {
+  position: sticky;
+  top: 0;
+}

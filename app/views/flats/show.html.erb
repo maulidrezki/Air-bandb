@@ -8,21 +8,21 @@
 
   <div class="row">
     <div class="col">
-      <h2><strong> <%= @flat.name %></h2>
+      <h4><%= @flat.name %></h4>
     </div>
   </div>
   </div>
 
 
+<div class="main-container">
   <div class="container mt-3">
     <div class="row">
-      <div class="flat-card">
-        <h3>A bit more about this flat...</h3>
-        <p><%= @flat.name %></p>
-        <p><%= @flat.price_per_night %></p>
-        <p><%= @flat.location%></p>
-        <p><%= @flat.capacity %></p>
-        <p><%= @flat.description %></p>
+      <div class="flat-card p-2">
+        <div class="flat-card-title">
+        <h4>A bit more about this flat...</h4>
+        </div>
+        <p><%= @flat.description %> for $<%= @flat.price_per_night %> per night.</p>
+        <p>We are located at <%= @flat.location%> with capacity of <%= @flat.capacity %> guests.</p>
         <div class="row" style="height:300px">
         <div class="col-<%= @flat.photos.second.nil? ? "12" : "6" %>">
           <div class="flat-pictures" style="background-image: url('<%= cl_image_path @flat.photos.first.key %>')"></div>
@@ -55,3 +55,13 @@
       </div>
     </div>
   </div>
+
+  <div class="booking-page mt-4 p-2">
+    <%= simple_form_for([@flat, @booking]) do |b| %>
+    <%= b.input :start_date %>
+    <%= b.input :end_date %>
+    <%=b.submit%>
+  <% end %>
+
+  </div>
+</div>
