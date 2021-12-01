@@ -28,8 +28,8 @@ end
 
 
 flat_1 = Flat.new(
-  name: "Light & Spacious Garden Flat London",
-  location: "Ubub",
+  name: "Light & Spacious Garden Flat Ubud",
+  location: "Ubud",
   description: "A lovely summer feel for this spacious garden flat. Two double bedrooms, open plan living area, large kitchen and a beautiful conservatory",
   price_per_night: 75,
   capacity: 3,
@@ -43,7 +43,7 @@ flat_1.photos.attach(io: pic_12, filename: "2.jpg", content_type: "image/jpg")
 flat_1.save!
 
 flat_2 = Flat.new(
-  name: "Stylish House Close to River Thames",
+  name: "Stylish House Close to Canggu",
   location: "Canggu",
   description: "Lovely warm comfortable and stylishly furnished house. Private bedroom and bathroom with shared living areas.",
   price_per_night: 65,
@@ -60,8 +60,8 @@ flat_2.photos.attach(io: pic_24, filename: "4.jpg", content_type: "image/jpg")
 flat_2.save!
 
 flat_3 = Flat.new(
-  name: "St Pancras Clock Tower Guest Suite",
-  location: "Kudungu",
+  name: "Kedungu Tower Guest Suite",
+  location: "Kedungu",
   description: "A mini apartment within the clock tower apartment at St Pancras Station, with its own en suite bathroom and kitchen and sitting area.",
   price_per_night: 121,
   capacity: 10,
@@ -73,7 +73,7 @@ flat_3.photos.attach(io: pic_3, filename: "3.jpg", content_type: "image/jpg")
 flat_3.save!
 
 flat_4 = Flat.new(
-  name: "Light & Spacious Garden Flat Jakarta",
+  name: "Light & Spacious Garden Flat Denpasar",
   location: "Denpasar",
   description: "A lovely summer feel for this spacious garden flat. Two double bedrooms, open plan living area, large kitchen and a beautiful conservatory",
   price_per_night: 50,
@@ -86,7 +86,7 @@ flat_4.photos.attach(io: pic_4, filename: "4.jpg", content_type: "image/jpg")
 flat_4.save!
 
 flat_5 = Flat.new(
-  name: "Stylish House Close to River Bali",
+  name: "Stylish House Close to Kuta Bali",
   location: "Kuta",
   description: "Lovely warm comfortable and stylishly furnished house. Private bedroom and bathroom with shared living areas.",
   price_per_night: 150,
@@ -99,7 +99,7 @@ flat_5.photos.attach(io: pic_5, filename: "5.jpg", content_type: "image/jpg")
 flat_5.save!
 
 flat_6 = Flat.new(
-  name: "Canggu Clock Tower Guest Suite",
+  name: "Uluwatu Cliff Guest Suite",
   location: "Uluwatu",
   description: "A mini apartment within the clock tower apartment at St Pancras Station, with its own en suite bathroom and kitchen and sitting area.",
   price_per_night: 250,
