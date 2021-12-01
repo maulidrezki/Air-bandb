@@ -1,4 +1,4 @@
-class CurrencyHelper
+class CurrencyInput < SimpleForm::Inputs::Base
   def input(wrapper_options)
     currency = options.delete(:currency) || default_currency
     merged_input_options = merge_wrapper_options(input_html_options, wrapper_options)
