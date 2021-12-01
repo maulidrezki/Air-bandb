@@ -11,4 +11,7 @@ class Flat < ApplicationRecord
   validates :capacity, presence: true, inclusion: { in: 1..100 }
   validates :description, presence: true
   validates :photos, presence: true
+
+  geocoded_by :location
+  after_validation :geocode, if: :will_save_change_to_location?
 end
