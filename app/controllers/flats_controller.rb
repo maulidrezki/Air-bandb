@@ -8,6 +8,16 @@ class FlatsController < ApplicationController
       @flats = Flat.all
     end
 
+    if params[:capacity].present?
+      @query = params[:capacity].to_i
+      @flats = @flats.where("capacity >= :query", query: @query)
+    end
+
+    if params[:price_per_night].present?
+      @query = params[:price_per_night].to_i
+      @flats = @flats.where("price_per_night <= :query", query: @query)
+    end
+
     @markers = @flats.geocoded.map do |flat|
       {
         lat: flat.latitude,
@@ -20,7 +30,7 @@ class FlatsController < ApplicationController
   def new
     @flat = Flat.new
   end
- 
+
   def create
     @flat = Flat.new(flat_params)
     @flat.user = current_user
