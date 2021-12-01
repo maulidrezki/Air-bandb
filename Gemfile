@@ -71,3 +71,6 @@ gem 'cloudinary', '~> 1.16.0'
 
 # faker
 gem 'faker'
+
+# geocode
+gem 'geocoder'
