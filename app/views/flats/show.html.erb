@@ -56,12 +56,14 @@
     </div>
   </div>
 
+ <% if @flat.user != current_user %>
   <div class="booking-page mt-4 p-2">
     <%= simple_form_for([@flat, @booking]) do |b| %>
-    <%= b.input :start_date %>
+    <%= b.input :start_date, html5: true %>
     <%= b.input :end_date %>
     <%=b.submit%>
-  <% end %>
+    <% end %>
+<% end %>
 
   </div>
 
