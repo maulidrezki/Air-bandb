@@ -4,12 +4,24 @@
   <% end %>
   <% if controller_name == "flats" && action_name == "index" %>
   <%= form_tag flats_path, method: :get do %>
-  <%= text_field_tag :query,
-    params[:query],
-    class: "form-control",
-    placeholder: "Find a flat"
-  %>
-  <%= submit_tag "Search", class: "btn btn-primary" %>
+  <div class="search-bar d-flex">
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Find a flat"
+    %>
+    <%= text_field_tag :capacity,
+      params[:capacity],
+      class: "form-control",
+      placeholder: "Capacity"
+    %>
+    <%= text_field_tag :price_per_night,
+      params[:price_per_night],
+      class: "form-control",
+      placeholder: "Price per night"
+    %>
+    <%= submit_tag "Search", class: "btn btn-primary" %>
+  </div>
   <% end %>
 <% end %>
 
