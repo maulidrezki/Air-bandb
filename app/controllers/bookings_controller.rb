@@ -21,5 +21,4 @@ class BookingsController < ApplicationController
       render 'dashboard'
     end
   end
-
 end
