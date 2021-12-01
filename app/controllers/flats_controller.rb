@@ -3,7 +3,7 @@ class FlatsController < ApplicationController
   def index
     if params[:query].present?
       @query = params[:query]
-      @flats = Flat.where("name iLike '%#{params[:query]}%'")
+      @flats = Flat.where("name iLike :query OR location iLike :query OR description iLike :query", query: "%#{params[:query]}%")
     else
       @flats = Flat.all
     end
