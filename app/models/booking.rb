@@ -24,9 +24,4 @@ class Booking < ApplicationRecord
     end
   end
 
-  def owner_booking?
-    if user_id == Flat.find(flat_id).user_id
-      errors.add :user_id, "You cannot make this booking as an owner"
-    end
-  end
 end
