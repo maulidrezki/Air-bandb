@@ -11,4 +11,12 @@ class Flat < ApplicationRecord
   validates :capacity, presence: true, inclusion: { in: 1..100 }
   validates :description, presence: true
   validates :photos, presence: true
+
+  def average_rating
+    return "No reviews" if reviews.length.zero?
+
+    reviews.sum(:rating) / reviews.length.to_f
+  end
+  geocoded_by :location
+  after_validation :geocode, if: :will_save_change_to_location?
 end

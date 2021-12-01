@@ -4,10 +4,10 @@ class PagesController < ApplicationController
     if user_signed_in?
       redirect_to flats_path
     end
-    
+
     if params[:query].present?
       @query = params[:query]
-      @flats = Flat.where("name iLike '%#{params[:query]}%'")
+      @flats = Flat.where("name iLike :query OR location iLike :query OR description iLike :query", query: "%#{params[:query]}%")
     else
       @flats = Flat.all.first(3)
     end
