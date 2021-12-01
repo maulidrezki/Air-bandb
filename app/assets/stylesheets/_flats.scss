@@ -72,3 +72,29 @@
   background-size: cover;
   background-position: bottom;
 }
+
+
+
+// NEW LISTING FORM STYLE
+
+.simple_form.new_flat, .simple_form.edit_flat {
+  margin: 4% 16%;
+
+  abbr {
+    color: transparent;
+  }
+}
+div.form-group {
+  margin-top: 40px;
+}
+
+h1 {
+  margin: 4% 16%;
+}
+
+
+.create-flat-button {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+}
