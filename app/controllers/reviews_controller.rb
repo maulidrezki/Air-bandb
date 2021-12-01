@@ -7,7 +7,7 @@ class ReviewsController < ApplicationController
     if @review.save
       redirect_to dashboard_path
     else
-      user 'list/show'
+      render 'bookings/show'
     end
   end
 

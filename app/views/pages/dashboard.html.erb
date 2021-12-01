@@ -41,6 +41,7 @@
         <h2> <%= booking.flat.name %> </h2>
         <h5> <%= booking.status %> </h5>
         <p><%= booking.start_date %> ~ <%= booking.end_date %></p>
+        <p><i class="fas fa-star red"></i><%= booking.flat.average_rating %></p>
       </div>
     </div>
   <% end %>
@@ -63,6 +64,7 @@
           <%= link_to "Accept", booking_path(booking, status: "confirmed"), method: :patch %>
           <%= link_to "Reject", booking_path(booking, status: "rejected"), method: :patch %>
         <% end %>
+        <p><i class="fas fa-star red"></i><%= booking.flat.average_rating %></p>
       </div>
     </div>
   <% end %>
