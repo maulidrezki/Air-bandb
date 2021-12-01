@@ -55,3 +55,20 @@
       </div>
     </div>
   </div>
+
+<div class = "container mt-2" >
+<h2></i>Reviews </h2>
+<div class="row">
+  <% @flat.reviews.each do |review| %>
+  <div class="col-6">
+    <div class="card mt-3 p-3">
+      <%= image_tag "https://kitt.lewagon.com/placeholder/users/sarahlafer", class: "avatar-bordered", alt: "avatar-bordered" %>
+      <p><%= review.booking.user.full_name %></p>
+      <p><%= review.created_at.strftime("%B %Y") %></p>
+      <p><i class="fas fa-star red"></i><%= review.rating %></p>
+      <p><%= review.content %></p>
+    </div>
+    </div>
+  <% end %>
+</div>
+</div>
