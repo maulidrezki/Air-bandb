@@ -1,10 +1,16 @@
 class BookingsController < ApplicationController
 
-   def create
-    @booking = Booking.new(params[:booking])
+  def create
+    @booking = Booking.new(booking_params)
+    @flat = Flat.find(params[:flat_id])
+    @booking.user = current_user
+    @booking.flat = @flat
+    @booking.status = "pending"
     if @booking.save
       redirect_to dashboard_path
-   end
+    else
+      render 'flats/show'
+    end
   end
 
   def show
@@ -21,4 +27,11 @@ class BookingsController < ApplicationController
       render 'dashboard'
     end
   end
+
+  private
+
+  def booking_params
+    params.require(:booking).permit(:start_date, :end_date)
+  end
+
 end
