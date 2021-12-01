@@ -60,7 +60,7 @@
   <div class="booking-page mt-4 p-2">
     <%= simple_form_for([@flat, @booking]) do |b| %>
     <%= b.input :start_date, html5: true %>
-    <%= b.input :end_date %>
+    <%= b.input :end_date, html5: true %>
     <%=b.submit%>
     <% end %>
 <% end %>
