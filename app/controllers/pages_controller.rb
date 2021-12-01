@@ -21,6 +21,7 @@ class PagesController < ApplicationController
     @bookings = Booking.joins(:flat).where(flat: { user_id: current_user.id })
 
     # Grab my own flats
-    @flats = current_user.flats
+
+     @my_flats = current_user.flats
   end
 end
