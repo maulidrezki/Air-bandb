@@ -36,7 +36,7 @@
   height: 3.0rem;
   box-shadow: 0 2px 6px rgba(0,0,0,0.08);
   border: 1px solid #E7E7E7;
-  border-radius: 20px;
+  border-radius: 10px;
 }
 
 .search-form-control .form-control:focus {
@@ -72,6 +72,11 @@
   padding: 16px 24px;
 }
 
+.margin {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
 .card {
   height: 300px;
   border-radius: 2px;
@@ -94,29 +99,10 @@
 
 .card img {
   height: 130px;
+  width: 130px;
 }
 
-@media (max-width: 960px) {
-  /* For a screen < 960px, this CSS will be read */
-  .container {
-    width: 700px;
-  }
-  .cards{
-    flex-direction: column;
-    align-items: center;
-  }
-  .card{
-    margin-bottom: 20px;
-    width: 280px;
-    height: 300px;
-  }
-}
-@media (max-width: 720px) {
-  /* For a screen < 720px, this CSS will be read */
-  .container {
-    width: 500px;
-  }
-}
+
 
 .footer {
   text-align: center;

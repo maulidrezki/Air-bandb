@@ -14,13 +14,11 @@
         <% end %>
     </div>
   </div>
-        <div>
-        <p>Not sure where to go?</p>
-        <%= link_to "I'm flexible", flats_path, class:"btn btn-flat" %>
-        </div>
 </div>
 
-  <div class="row">
+<h1 class="text-center">Some of the Kinder Flats 🏡 </h2>
+
+  <div class="row p-5">
     <% @flats.each do |flat| %>
       <div class="col-4">
         <div class="flat-cardMaulid">
@@ -38,16 +36,19 @@
             </div>
           </div>
           <div class="flat-card-actionsMaulid ">
-            <%= link_to 'Book now', flat_path(flat) %>
+            <%= link_to "More Info", flat_path(flat), class: "btn btn-outline-secondary" %>
           </div>
         </div>
       </div>
     <% end %>
     </div>
   </div>
+    <div class="text-center">
+        <%= link_to "See more flats", flats_path, class:"btn btn-outline-secondary" %>
+    </div>
 
     <div class="container" id="p2">
-      <h2 class="text-center">About KinderBnb</h2>
+      <h1 class="text-center">About KinderBnb</h2>
       <div class="cards">
         <div class="row">
           <div class="col-12 col-sm-6 col-lg-4">
@@ -66,7 +67,7 @@
         </div>
       </div>
 
-      <div class="col-12 col-lg-4">
+      <div class="col-12 col-sm-6 col-lg-4">
         <div class="card">
           <%= image_tag "profit.svg", alt: "image of profit"%>
           <h4>Profit</h4>
