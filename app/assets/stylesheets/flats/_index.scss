@@ -84,7 +84,8 @@
 }
 .simple_form.new_flat,
 .simple_form.edit_flat,
-.form-inputs {
+.form-inputs,
+.simple_form.new_review {
   margin: 4% 16%;
 
   abbr {
@@ -95,7 +96,7 @@ div.form-group {
   margin-top: 40px;
 }
 
-h1 {
+h1,h2 {
   margin: 4% 16%;
 }
 
@@ -132,14 +133,14 @@ h1 {
   top: 0;
 }
 
-@media(max-width: 992px) {
-  .cards {
-    grid-template-columns: 1fr 1fr;
-  }
-}
+// @media(max-width: 992px) {
+//   .cards {
+//     grid-template-columns: 1fr 1fr;
+//   }
+// }
 
-@media(max-width: 768px) {
-  .cards {
-    grid-template-columns: 1fr;
-  }
-}
+// @media(max-width: 768px) {
+//   .cards {
+//     grid-template-columns: 1fr;
+//   }
+// }
