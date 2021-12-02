@@ -1,6 +1,7 @@
-<h2 class="form-headers m-5">Log in</h2>
+
 
 <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <h2 class="form-headers m-5">Log in</h2>
   <div class="form-inputs m-5">
     <%= f.input :email,
                 required: false,
@@ -9,13 +10,13 @@
     <%= f.input :password,
                 required: false,
                 input_html: { autocomplete: "current-password" } %>
+    <%= link_to "Forgot your password?", new_password_path(resource_name) %><br><br>
     <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
   </div>
 
   <div class="m-5">
-    <%= f.button :submit, "Log in", class: "btn btn-success pr-5 pl-5" %>
+    <%= f.button :submit, "Log in", class: "btn btn-outline-success pr-5 pl-5" %>
+  </div>
+  <div class="devise-links m-5">
   </div>
 <% end %>
-<div class="devise-links m-5">
-  <%= render "devise/shared/links" %>
-</div>

@@ -82,8 +82,7 @@
   position: sticky;
   top: 0;
 }
-.simple_form.new_flat,
-.simple_form.edit_flat,
+.form-headers-flat,
 .form-inputs,
 .simple_form.new_review {
   margin: 4% 16%;
@@ -92,14 +91,21 @@
     color: transparent;
   }
 }
+
+.simple_form.new_user {
+  margin: 4% 24%;
+
+  .btn {
+    text-align: center;
+    align-items: center;
+  }
+}
+
+
+
 div.form-group {
   margin-top: 40px;
 }
-
-.form-headers {
-  margin: 4% 16%;
-  }
-
 
 
 
