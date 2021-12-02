@@ -84,7 +84,8 @@
 }
 .simple_form.new_flat,
 .simple_form.edit_flat,
-.form-inputs {
+.form-inputs,
+.simple_form.new_review {
   margin: 4% 16%;
 
   abbr {
@@ -95,7 +96,7 @@ div.form-group {
   margin-top: 40px;
 }
 
-h1 {
+h1,h2 {
   margin: 4% 16%;
 }
 
