@@ -82,7 +82,9 @@
   position: sticky;
   top: 0;
 }
-.simple_form.new_flat, .simple_form.edit_flat {
+.simple_form.new_flat,
+.simple_form.edit_flat,
+.form-inputs {
   margin: 4% 16%;
 
   abbr {
