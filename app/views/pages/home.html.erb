@@ -1,30 +1,35 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1520451020015-dce5223e9a75?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1742&q=80);">
   <div class="container">
-    <h1>KinderBnb <strong>brings</strong> the <strong>best flats</strong>!</h1>
+    <h1>KinderBnb <strong>brings</strong> the <strong>best flats for you! </strong></h1>
     <p>Stay with us and enjoy our best flats around the world.</p>
     <%= form_tag flats_path, method: :get do %>
-  <%= text_field_tag :query,
-    params[:query],
-    class: "form-control",
-    placeholder: "Where are you going?"
-  %>
-  <%= submit_tag "Search", class: "btn btn-primary" %>
-<% end %>
+      <div class="search-form-control form-group">
+        <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Where are you going?"
+        %>
+        <button name="button" type="submit" class="btn btn-flat">
+        <i class="fas fa-search"></i> Search </button>
+        <% end %>
+    </div>
   </div>
+        <div>
+        <p>Not sure where to go?</p>
+        <%= link_to "I'm flexible", flats_path, class:"btn btn-flat" %>
+        </div>
 </div>
 
-
-<div class="row p-5 ">
-  <% @flats.each do |flat| %>
-    <div class="col-4">
-      <div class="flat-card">
-        <div class="flat-card-image" style="background-image: url('<%= cl_image_path flat.photos.first.key %>')"></div>
-        <div class="flat-card-content">
-          <div class="flat-card-title">
-            <h4><%= flat.name %></h4>
-          </div>
-          <p><%= flat.location %></p>
-          <div class="flex">
+  <div class="row">
+    <% @flats.each do |flat| %>
+      <div class="col-4">
+        <div class="flat-cardMaulid">
+          <div class="flat-card-imageMaulid" style="background-image: url('<%= cl_image_path flat.photos.first.key %>')"></div>
+          <div class="flat-card-contentMaulid">
+            <div class="flat-card-titleMaulid">
+              <h4><%= flat.name %></h4>
+            </div>
+            <p><%= flat.location %></p>
             <div class="flex">
               <i class="material-icons mr-2">people</i><span><%= flat.capacity %></span>
             </div>
@@ -32,13 +37,41 @@
               <i class="material-icons mr-2">euro_symbol</i> <%= flat.price_per_night %>
             </div>
           </div>
+          <div class="flat-card-actionsMaulid ">
+            <%= link_to 'Book now', flat_path(flat) %>
+          </div>
         </div>
-        <div class="flat-card-actions ">
-          <%= link_to 'Book now', flat_path(flat) %>
-          <a href="#" class="ml-3 text-warning">Edit</a>
-          <a href="#" class="ml-3 text-danger">Remove</a>
+      </div>
+    <% end %>
+    </div>
+  </div>
+
+    <div class="container" id="p2">
+      <h2 class="text-center">About KinderBnb</h2>
+      <div class="cards">
+        <div class="row">
+          <div class="col-12 col-sm-6 col-lg-4">
+            <div class="card">
+              <%= image_tag "community.svg", alt: "image of community"%>
+                <h4>People</h4>
+                  <p>A community of kinder people around the globe</p>
+            </div>
+          </div>
+
+      <div class="col-12 col-sm-6 col-lg-4">
+        <div class="card">
+          <%= image_tag "nature.svg", alt: "image of sustainability"%>
+          <h4>Planet</h4>
+          <p>Reducing carbon footprint by staying with your friendly local host</p>
+        </div>
+      </div>
+
+      <div class="col-12 col-lg-4">
+        <div class="card">
+          <%= image_tag "profit.svg", alt: "image of profit"%>
+          <h4>Profit</h4>
+          <p>Helping each other by providing circular economy model</p>
         </div>
       </div>
     </div>
-  <% end %>
-</div>
+  </div>
