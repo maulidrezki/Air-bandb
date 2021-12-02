@@ -17,7 +17,7 @@
       </div>
       <div class="row">
         <% @flats.each do |flat| %>
-          <div class="card-product m-3">
+          <div class="card-product w-900 m-3">
             <%= cl_image_tag flat.photos.first.key %>
             <div class="card-product-infos">
               <h2> <%= flat.name %> </h2>
