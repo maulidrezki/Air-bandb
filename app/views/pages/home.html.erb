@@ -13,32 +13,32 @@
   </div>
 </div>
 
-  <div class="row">
-    <% @flats.each do |flat| %>
-      <div class="col-4">
-        <div class="flat-card">
-          <div class="flat-card-image" style="background-image: url('<%= cl_image_path flat.photos.first.key %>')"></div>
-          <div class="flat-card-content">
-            <div class="flat-card-title">
-              <h4><%= flat.name %></h4>
-            </div>
-            <p><%= flat.location %></p>
-            <div class="flex">
-              <div class="flex">
-                <i class="material-icons mr-2">people</i><span><%= flat.capacity %></span>
-              </div>
-              <div class="flex ml-3">
-                <i class="material-icons mr-2">euro_symbol</i> <%= flat.price_per_night %>
-              </div>
-            </div>
+
+<div class="row p-5 ">
+  <% @flats.each do |flat| %>
+    <div class="col-4">
+      <div class="flat-card">
+        <div class="flat-card-image" style="background-image: url('<%= cl_image_path flat.photos.first.key %>')"></div>
+        <div class="flat-card-content">
+          <div class="flat-card-title">
+            <h4><%= flat.name %></h4>
           </div>
-          <div class="flat-card-actions ">
-            <%= link_to 'Book now', flat_path(flat) %>
-            <a href="#" class="ml-3 text-warning">Edit</a>
-            <a href="#" class="ml-3 text-danger">Remove</a>
+          <p><%= flat.location %></p>
+          <div class="flex">
+            <div class="flex">
+              <i class="material-icons mr-2">people</i><span><%= flat.capacity %></span>
+            </div>
+            <div class="flex ml-3">
+              <i class="material-icons mr-2">euro_symbol</i> <%= flat.price_per_night %>
+            </div>
           </div>
         </div>
+        <div class="flat-card-actions ">
+          <%= link_to 'Book now', flat_path(flat) %>
+          <a href="#" class="ml-3 text-warning">Edit</a>
+          <a href="#" class="ml-3 text-danger">Remove</a>
+        </div>
       </div>
-    <% end %>
-  </div>
+    </div>
+  <% end %>
 </div>
