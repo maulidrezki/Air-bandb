@@ -10,43 +10,38 @@
         </div>
       </div>
 
-
       <div class="row">
         <div class="col">
           <h5>You searched for <strong><%= @query %></strong>. We found <%= @flats.count %> flats for you on KinderBnb.</h5>
         </div>
       </div>
+      <div class="row">
+        <% @flats.each do |flat| %>
+          <div class="card-product m-3">
+            <%= cl_image_tag flat.photos.first.key %>
+            <div class="card-product-infos">
+              <h2> <%= flat.name %> </h2>
+              <h5> <i class="fas fa-map-marker-alt mt-2 red"></i> <%= flat.location %> </h5>
 
-
-      <div class="card-container m-2">
-        <div class="row">
-          <% @flats.each do |flat| %>
-            <div class="col-6">
-              <div class="flat-card">
-                <div class="flat-card-image" style="background-image: url('<%= cl_image_path flat.photos.first.key %>')"></div>
-                <div class="flat-card-content">
-                  <div class="flat-card-title">
-                    <h4><%= flat.name %></h4>
-                  </div>
-                  <p><%= flat.location %></p>
-                  <div class="flex">
-                    <div class="flex">
-                      <i class="material-icons mr-2">people</i><span><%= flat.capacity %></span>
-                    </div>
-                    <div class="flex ml-3">
-                      <i class="material-icons mr-2">euro_symbol</i> <%= flat.price_per_night %>
-                    </div>
-                  </div>
+              <div class="flex">
+                <div class="flex">
+                  <i class="material-icons mr-2">people</i><span><%= flat.capacity %></span>
                 </div>
-                <div class="flat-card-actions">
-                  <%= link_to 'More info', flat_path(flat) %>
-                  <%= link_to 'Edit', edit_flat_path(flat), class: "ml-3 text-warning" %>
-                  <%# <a href="#" class="ml-3 text-danger">Remove</a> %>
+                <div class="flex ml-3">
+                  <i class="material-icons mr-2">euro_symbol</i> <%= flat.price_per_night %>
+                </div>
+              </div>
+              <div class="more-info d-flex justify-content-between">
+                <div>
+                  <p><i class="fas fa-star" style="color: #F49831;"></i> <%= flat.average_rating %> </p>
+                </div>
+                <div>
+                  <%= link_to "More Info", flat_path(flat), class: "btn btn-outline-secondary" %>
                 </div>
               </div>
             </div>
-          <% end %>
-        </div>
+          </div>
+        <% end %>
       </div>
     </div>
     <div class="right">
