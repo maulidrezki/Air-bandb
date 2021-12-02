@@ -96,9 +96,11 @@ div.form-group {
   margin-top: 40px;
 }
 
-h1,h2 {
+.form-headers {
   margin: 4% 16%;
-}
+  }
+
+
 
 
 .create-flat-button {
@@ -108,6 +110,29 @@ h1,h2 {
 }
 
 
+
+// for cards in dashboard my flats
+
+.my-flat-card-dashboard {
+  background: #F8F9FA;
+  margin-bottom: 20px;
+  box-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+  border-radius: 3px;
+
+  .flat-card-image {
+    height: 160px;
+  }
+
+  .flat-card-content {
+    height: 144px;
+  }
+
+}
+
+.flat-card-actions {
+    display: flex;
+    justify-content: space-between;
+}
 
 // for map with card
 
