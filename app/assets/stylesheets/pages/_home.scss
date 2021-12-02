@@ -63,10 +63,12 @@
 .flat-card-contentMaulid {
   padding: 24px;
   background-color: #F8F9FA;
+  height:130px;
 }
 
 .flat-card-actionsMaulid {
-  position: relative;
+  display: flex;
+  justify-content: right;
   background-color: inherit;
   border-top: 1px solid rgba(160,160,160,0.2);
   padding: 16px 24px;
@@ -120,4 +122,18 @@
 
 .footer .fas {
   color: #BF0F12;
+}
+
+.justify{
+  display:flex;
+  justify-content: left;
+}
+
+.doom{
+  margin-bottom: 85px;
+  margin-top: 0px;
+}
+
+.someflats{
+  margin-top: 30px;
 }
