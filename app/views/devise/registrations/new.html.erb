@@ -23,6 +23,11 @@
     <%= f.input :password_confirmation,
                 required: true,
                 input_html: { autocomplete: "new-password" } %>
+     <%= f.file_field :avatar,
+                required: true,
+                placeholder: 'Upload your profile picture',
+                direct_upload: true,
+                input_html: { autocomplete: "avatar" } %>
   </div>
 
   <div class="form-actions m-5">
