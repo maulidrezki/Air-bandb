@@ -6,7 +6,7 @@
     </div>
   </div>
   <div class="row">
-    <div class="col">
+    <div class="col-12">
       <h4><%= @flat.name %></h4>
     </div>
   </div>
@@ -14,13 +14,13 @@
 <div class="main-container">
   <div class="container mt-3">
     <div class="row">
-      <div class="flat-card p-2">
+      <div class="booking-card p-2">
         <div class="flat-card-title">
         <h4>A bit more about this flat...</h4>
         </div>
         <p><%= @flat.description.gsub(".", "") %> for $<%= @flat.price_per_night %> per night.</p>
         <p>We are located at <%= @flat.location%> with capacity of <%= @flat.capacity %> guests.</p>
-        <div class="row" style="height:300px">
+        <div class="row" style="height:200px">
         <div class="col-<%= @flat.photos.second.nil? ? "12" : "6" %>">
           <div class="flat-pictures" style="background-image: url('<%= cl_image_path @flat.photos.first.key %>')"></div>
          </div>
@@ -53,11 +53,13 @@
     </div>
   </div>
  <% if @flat.user != current_user %>
-  <div class="booking-page mt-4 p-2">
+  <div class="booking-page mt-2 p-2">
     <%= simple_form_for([@flat, @booking]) do |b| %>
     <%= b.input :start_date, html5: true %>
     <%= b.input :end_date, html5: true %>
-    <%=b.submit%>
+    <div class="create-booking-button">
+    <%= b.submit %>
+    </div>
     <% end %>
 <% end %>
   </div>
@@ -75,7 +77,7 @@
 
 
 <div class = "container mt-2" >
-<h2><i class="fas fa-star red"></i> Reviews (<%= @flat.average_rating %>)</h2>
+<h4><i class="fas fa-star red"></i> Reviews (<%= @flat.average_rating %>)</h4>
 <div class="row">
   <% @flat.reviews.each do |review| %>
   <div class="col-6">
