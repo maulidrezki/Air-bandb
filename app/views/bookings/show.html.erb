@@ -1,7 +1,5 @@
-
-<h2 class="form-headers">Leave a review</h2>
-
 <%= simple_form_for [@booking, @review] do |f| %>
+  <h2 class="form-headers">Leave a review</h2>
   <%= f.input :rating, as: :integer, input_html: { min: '0', max: '5', step: '1' } %>
   <%= f.input :content, label: "Comment" %>
   <%= f.submit %>

@@ -1,6 +1,7 @@
-<h2 class="m-5">Forgot your password?</h2>
+
 
 <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+  <h2 class="m-5">Forgot your password?</h2>
   <%= f.error_notification %>
 
   <div class="form-inputs m-5">
@@ -11,11 +12,6 @@
   </div>
 
   <div class="form-actions m-5">
-    <%= f.button :submit, "Send me reset password instructions", class: "btn btn-success pr-5 pl-5" %>
+    <%= f.button :submit, "Send me reset password instructions", class: "btn btn-outline-success pr-5 pl-5" %>
   </div>
 <% end %>
-
-
-<div class="m-5">
-  <%= render "devise/shared/links" %>
-</div>
