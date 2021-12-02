@@ -44,6 +44,11 @@ class FlatsController < ApplicationController
   def show
     @flat = Flat.find(params[:id])
     @booking = Booking.new
+    @markers = [{
+      lat: @flat.latitude,
+      lng: @flat.longitude,
+      info_window: render_to_string(partial: "info_window", locals: { flat: @flat })
+    }]
   end
 
   def edit
