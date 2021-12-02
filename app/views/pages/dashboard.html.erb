@@ -1,9 +1,11 @@
 
-<div class="container">
-  <h1 class="title mt-3" style="text-align: center;">Dashboard</h1>
 
+<h1 class="title mt-3" style="text-align: center;">Dashboard</h1>
+
+
+<div class="container">
   <div class="my-flat">
-    <h2 class="title mb-3"> My Flats </h2>
+    <h2 class="title m-3"> My Flats </h2>
       <% if @my_flats.empty? %>
         <p>You don't have flat! yet!</p>
       <% end %>
@@ -28,46 +30,62 @@
       <% end %>
     </div>
   </div>
+</div>
 
-  <hr>
 
-  <h2 class="title mb-3"> My Bookings </h2>
+<div class="container">
+  <h2 class="title m-3"> My Bookings </h2>
     <% if @my_booking.empty? %>
       <p>You don't have booking! yet!</p>
     <% end %>
   <% @my_booking.each do |booking| %>
-    <div class="card-product mb-3">
+    <div class="card-product mb-4">
       <%= cl_image_tag booking.flat.photos.first.key %>
       <div class="card-product-infos">
-        <h2> <%= booking.flat.name %> </h2>
-        <h5> <%= booking.status %> </h5>
-        <p><%= booking.start_date %> ~ <%= booking.end_date %></p>
-        <p><i class="fas fa-star red"></i><%= booking.flat.average_rating %></p>
-        <%= link_to "More Info", flat_path(booking.flat) %>
-        <%= link_to "Review", booking_path(booking) %>
+        <h3> <%= booking.flat.name %> </h3>
+
+        <h2> <%= booking.status %> </h2>
+
+        <h2><%= booking.start_date %> ~ <%= booking.end_date %></h2>
+        <div class="more-info d-flex justify-content-between">
+          <div class="rating mt-2">
+            <p><i class="fas fa-star" style="color: #F49831;"></i> <%= booking.flat.average_rating %></p>
+          </div>
+          <div>
+            <%= link_to "Review", booking_path(booking), class: "btn btn-outline-secondary mr-2" %>
+            <%= link_to "More Info", flat_path(booking.flat), class: "btn btn-outline-secondary" %>
+          </div>
+        </div>
       </div>
     </div>
   <% end %>
 
-  <hr>
-
-  <h2 class="title mb-3"> My flat's Bookings </h2>
+  <h2 class="title m-3"> My flat's Bookings </h2>
     <% if @bookings.empty? %>
       <p>You don't have booking! yet!</p>
     <% end %>
   <% @bookings.each do |booking| %>
-    <div class="card-product mb-3">
+    <div class="card-product mb-4">
       <%= cl_image_tag booking.flat.photos.first.key %>
       <div class="card-product-infos">
-        <h2> <%= booking.flat.name %> </h2>
-        <h5> <%= booking.status %> </h5>
-        <p><%= booking.start_date %> ~ <%= booking.end_date %></p>
-        <% if booking.status == "pending" %>
+        <h3> <%= booking.flat.name %> </h3>
 
-          <%= link_to "Accept", booking_path(booking, status: "confirmed"), method: :patch %>
-          <%= link_to "Reject", booking_path(booking, status: "rejected"), method: :patch %>
-        <% end %>
-        <p><i class="fas fa-star red"></i><%= booking.flat.average_rating %></p>
+        <h2> <%= booking.status %> </h2>
+
+        <h2><%= booking.start_date %> ~ <%= booking.end_date %></h2>
+        <div class="more-info d-flex justify-content-between">
+          <div class="rating mt-2">
+            <p><i class="fas fa-star" style="color: #F49831;"></i> <%= booking.flat.average_rating %></p>
+          </div>
+          <div>
+            <% if booking.status == "pending" %>
+              <div>
+                <%= link_to "Accept", booking_path(booking, status: "confirmed"), method: :patch, class: "btn btn-outline-secondary mr-2" %>
+                <%= link_to "Reject", booking_path(booking, status: "rejected"), method: :patch, class: "btn btn-outline-secondary" %>
+              </div>
+            <% end %>
+          </div>
+        </div>
       </div>
     </div>
   <% end %>
