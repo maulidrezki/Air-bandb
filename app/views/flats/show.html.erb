@@ -11,38 +11,45 @@
     </div>
   </div>
   </div>
-<div class="main-container">
+<div class="main-container pb-5">
   <div class="container mt-5 mb-5">
-      <div class="booking-card">
-        <div class="flat-card-title">
-        <h4>A bit more about this flat...</h4>
-        </div>
-        <p><%= @flat.description.gsub(".", "") %> for $<%= @flat.price_per_night %> per night.</p>
-        <p>We are located at <%= @flat.location%> with capacity of <%= @flat.capacity %> guests.</p>
-        <div class="row" style="height:200px">
+    <div class="flat-card-title">
+      <h4>A bit more about this flat...</h4>
+    </div>
+      <p><%= @flat.description.gsub(".", "") %> for $<%= @flat.price_per_night %> per night.</p>
+      <p>We are located at <%= @flat.location%> with capacity of <%= @flat.capacity %> guests.</p>
+    <div class="row">
         <div class="col-<%= @flat.photos.second.nil? ? "12" : "6" %>">
-          <div class="flat-pictures" style="background-image: url('<%= cl_image_path @flat.photos.first.key %>')"></div>
-         </div>
+          <div class="booking-pictures" style="background-image: url('<%= cl_image_path @flat.photos.first.key %>')"></div>
+          </div>
          <div class="col-6">
           <div class="row">
-          <%unless @flat.photos.second.nil?%>
-          <div class="col-<%= @flat.photos.third.nil? ? "12" : "6" %>">
-            <div class="flat-pictures" style="background-image: url('<%= cl_image_path @flat.photos.second.key %>')"></div>
+            <%unless @flat.photos.second.nil?%>
+         <div class="col-<%= @flat.photos.third.nil? ? "12" : "6" %>">
+            <% if @flat.photos.size > 3 %>
+              <div class="booking-pictures-small" style="background-image: url('<%= cl_image_path @flat.photos.second.key %>')"></div>
+            <% else %>
+              <div class="booking-pictures" style="background-image: url('<%= cl_image_path @flat.photos.second.key %>')"></div>
+            <% end %>
           </div>
           <%end%>
           <%unless @flat.photos.third.nil?%>
           <div class="col-6">
-            <div class="flat-pictures" style="background-image: url('<%= cl_image_path @flat.photos.third.key %>')"></div>
+            <% if @flat.photos.size > 3 %>
+              <div class="booking-pictures-small" style="background-image: url('<%= cl_image_path @flat.photos.third.key %>')"></div>
+            <% else %>
+              <div class="booking-pictures" style="background-image: url('<%= cl_image_path @flat.photos.third.key %>')"></div>
+            <% end %>
           </div>
           <%end%>
           <%unless @flat.photos.fourth.nil?%>
           <div class="col-6">
-            <div class="flat-pictures" style="background-image: url('<%= cl_image_path @flat.photos.fourth.key %>')"></div>
+            <div class="booking-pictures-small" style="background-image: url('<%= cl_image_path @flat.photos.fourth.key %>')"></div>
           </div>
           <%end%>
           <%unless @flat.photos.fifth.nil?%>
           <div class="col-6">
-            <div class="flat-pictures" style="background-image: url('<%= cl_image_path @flat.photos.fifth.key %>')"></div>
+            <div class="booking-pictures-small" style="background-image: url('<%= cl_image_path @flat.photos.fifth.key %>')"></div>
           </div>
           <%end%>
           </div>
