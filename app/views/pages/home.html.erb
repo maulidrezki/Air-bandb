@@ -11,34 +11,34 @@
         %>
         <button name="button" type="submit" class="btn btn-flat">
         <i class="fas fa-search"></i> Search </button>
-        <% end %>
-    </div>
+      </div>
+    <% end %>
   </div>
 </div>
 
 <div class="someflats">
-<h1 class="text-center">Some of the Kinder Flats 🏡 </h2>
+  <h1 class="text-center">Some of the Kinder Flats 🏡 </h2>
 </div>
 
-  <div class="row p-5">
-    <% @flats.each do |flat| %>
-      <div class="col-4">
-        <div class="flat-cardMaulid">
-          <div class="flat-card-imageMaulid" style="background-image: url('<%= cl_image_path flat.photos.first.key %>')"></div>
-          <div class="flat-card-contentMaulid">
-            <div class="flat-card-titleMaulid">
-              <h4><%= flat.name %></h4>
-            </div>
-            <p><%= flat.location %></p>
+<div class="row p-5">
+  <% @flats.each do |flat| %>
+    <div class="col-4">
+      <div class="flat-cardMaulid">
+        <div class="flat-card-imageMaulid" style="background-image: url('<%= cl_image_path flat.photos.first.key %>')"></div>
+        <div class="flat-card-contentMaulid">
+          <div class="flat-card-titleMaulid">
+            <h4><%= flat.name %></h4>
           </div>
-          <div class="flat-card-actionsMaulid ">
-            <%= link_to "More Info", flat_path(flat), class: "btn btn-outline-secondary" %>
-          </div>
+          <p><%= flat.location %></p>
+        </div>
+        <div class="flat-card-actionsMaulid ">
+          <%= link_to "More Info", flat_path(flat), class: "btn btn-outline-secondary" %>
         </div>
       </div>
-    <% end %>
     </div>
+  <% end %>
   </div>
+</div>
 
     <div class="text-center">
         <%= link_to "See more flats", flats_path, class:"btn btn-outline-secondary doom" %>
@@ -72,4 +72,3 @@
         </div>
       </div>
     </div>
-  </div>
