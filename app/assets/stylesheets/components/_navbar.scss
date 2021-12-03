@@ -30,3 +30,19 @@
   background-color: rgba(92, 92, 92, 0.534);
 
 }
+
+.search-bar-parameter {
+  border: transparent;
+}
+
+.search-bar-parameter.border-right {
+  border-right: solid;
+}
+
+.search-bar.d-flex {
+  border: solid;
+  border-color: #dee2e6;
+  border-width: 1px;
+  border-radius: 24px;
+  padding: 4px 12px;
+}
