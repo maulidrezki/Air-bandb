@@ -59,7 +59,10 @@ class FlatsController < ApplicationController
 
   def update
     @flat = Flat.find(params[:id])
-    @flat.update(flat_params)
+    params[:flat][:photos].each do |photo|
+      @flat.photos.attach(photo)
+    end
+    @flat.update(update_params)
     redirect_to flat_path(@flat)
   end
 
@@ -74,5 +77,9 @@ class FlatsController < ApplicationController
 
   def flat_params
     params.require(:flat).permit(:name, :location, :description, :price_per_night, :capacity, photos: [])
+  end
+
+  def update_params
+    params.require(:flat).permit(:name, :location, :description, :price_per_night, :capacity)
   end
 end
