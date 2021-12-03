@@ -5,7 +5,7 @@
 
 <div class="container">
   <div class="flats">
-    <div class="my-flats-title m-3">
+    <div class="my-flats-title mb-2">
       <div class="my-flats d-flex text-align-center">
         <h2 class="title mr-2"> My Flats </h2>
         <div class="new-flat text-align-center">
@@ -14,52 +14,49 @@
       </div>
     </div>
   </div>
-      <% if @my_flats.empty? %>
-        <p>You don't have flat! yet!</p>
-      <% end %>
-    <div class="row">
-      <% @my_flats.each do |flat| %>
-        <div class="col-4">
-          <div class="my-flat-card-dashboard">
-            <div class="flat-card-image" style="background-image: url('<%= cl_image_path flat.photos.first.key %>')"></div>
-            <div class="flat-card-content">
-              <div class="flat-card-title">
-                <h4><%= flat.name %></h4>
-              </div>
-              <p><%= flat.location %></p>
+  <% if @my_flats.empty? %>
+    <p>You don't have flat! yet!</p>
+  <% end %>
+  <div class="row">
+    <% @my_flats.each do |flat| %>
+      <div class="col-4">
+        <div class="my-flat-card-dashboard">
+          <div class="flat-card-image" style="background-image: url('<%= cl_image_path flat.photos.first.key %>')"></div>
+          <div class="flat-card-content">
+            <div class="flat-card-title">
+              <h4><%= flat.name %></h4>
             </div>
-            <div class="flat-card-actions">
-              <%= link_to 'More info', flat_path(flat) %>
-              <%= link_to "Edit", edit_flat_path(flat) %>
-              <% if policy(flat).destroy? %>
-                <%= link_to "Delete", flat_path(flat), method: :delete,  data: { confirm: "Are you sure you want to delete this flat? You will delete all the related bookings." }%>
-              <% end %>
-            </div>
+            <p><%= flat.location %></p>
+          </div>
+          <div class="flat-card-actions">
+            <%= link_to 'More info', flat_path(flat) %>
+            <%= link_to "Edit", edit_flat_path(flat) %>
+            <% if policy(flat).destroy? %>
+              <%= link_to "Delete", flat_path(flat), method: :delete,  data: { confirm: "Are you sure you want to delete this flat? You will delete all the related bookings." }%>
+            <% end %>
           </div>
         </div>
-      <% end %>
-    </div>
+      </div>
+    <% end %>
   </div>
 </div>
 
 
-<div class="container">
-  <h2 class="title m-3"> My Bookings </h2>
-    <% if @my_booking.empty? %>
-      <p>You don't have booking! yet!</p>
-    <% end %>
+<div class="container mb-2">
+  <h2 class="title mb-2"> My Bookings </h2>
+  <% if @my_booking.empty? %>
+    <p>You don't have booking! yet!</p>
+  <% end %>
   <% @my_booking.each do |booking| %>
     <div class="card-product mb-4">
       <%= cl_image_tag booking.flat.photos.first.key %>
       <div class="card-product-infos">
         <h3> <%= booking.flat.name %> </h3>
-
-        <h2> <%= booking.status %> </h2>
-
+        <h2> <%= booking.status.capitalize %> </h2>
         <h2><%= booking.start_date %> ~ <%= booking.end_date %></h2>
         <div class="more-info d-flex justify-content-between">
-          <div class="rating mt-2">
-            <p><i class="fas fa-star" style="color: #F49831;"></i> <%= booking.flat.average_rating %></p>
+          <div class="review mt-3">
+            <h2><i class="fas fa-star" style="color: #F49831;"></i> <%= booking.flat.average_rating %></h2>
           </div>
           <div>
             <%= link_to "Review", booking_path(booking), class: "btn btn-outline-secondary mr-2" %>
@@ -70,10 +67,10 @@
     </div>
   <% end %>
 
-  <h2 class="title m-3"> My flat's Bookings </h2>
-    <% if @bookings.empty? %>
-      <p>You don't have booking! yet!</p>
-    <% end %>
+  <h2 class="title mb-2"> My flat's Bookings </h2>
+  <% if @bookings.empty? %>
+    <p>You don't have booking! yet!</p>
+  <% end %>
   <% @bookings.each do |booking| %>
     <div class="card-product mb-4">
       <%= cl_image_tag booking.flat.photos.first.key %>
@@ -84,8 +81,8 @@
 
         <h2><%= booking.start_date %> ~ <%= booking.end_date %></h2>
         <div class="more-info d-flex justify-content-between">
-          <div class="rating mt-2">
-            <p><i class="fas fa-star" style="color: #F49831;"></i> <%= booking.flat.average_rating %></p>
+          <div class="review mt-3">
+            <h2><i class="fas fa-star" style="color: #F49831;"></i> <%= booking.flat.average_rating %></h2>
           </div>
           <div>
             <% if booking.status == "pending" %>
