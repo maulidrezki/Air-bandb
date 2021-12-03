@@ -29,7 +29,7 @@ end
 
 flat_1 = Flat.new(
   name: "Light & Spacious Garden Flat Ubud",
-  location: "Ubud",
+  location: "Ubud, Bali, Indonesia",
   description: "A lovely summer feel for this spacious garden flat. Two double bedrooms, open plan living area, large kitchen and a beautiful conservatory",
   price_per_night: 75,
   capacity: 3,
@@ -44,7 +44,7 @@ flat_1.save!
 
 flat_2 = Flat.new(
   name: "Stylish House Close to Canggu",
-  location: "Canggu",
+  location: "Canggu, Bali, Indonesia",
   description: "Lovely warm comfortable and stylishly furnished house. Private bedroom and bathroom with shared living areas.",
   price_per_night: 65,
   capacity: 2,
@@ -61,7 +61,7 @@ flat_2.save!
 
 flat_3 = Flat.new(
   name: "Kedungu Tower Guest Suite",
-  location: "Kedungu",
+  location: "Kedungu, Bali, Indonesia",
   description: "A mini apartment within the clock tower apartment at St Pancras Station, with its own en suite bathroom and kitchen and sitting area.",
   price_per_night: 121,
   capacity: 10,
@@ -74,7 +74,7 @@ flat_3.save!
 
 flat_4 = Flat.new(
   name: "Light & Spacious Garden Flat Denpasar",
-  location: "Denpasar",
+  location: "Denpasar, Bali, Indonesia",
   description: "A lovely summer feel for this spacious garden flat. Two double bedrooms, open plan living area, large kitchen and a beautiful conservatory",
   price_per_night: 50,
   capacity: 8,
@@ -87,7 +87,7 @@ flat_4.save!
 
 flat_5 = Flat.new(
   name: "Stylish House Close to Kuta Bali",
-  location: "Kuta",
+  location: "Kuta, Bali, Indonesia",
   description: "Lovely warm comfortable and stylishly furnished house. Private bedroom and bathroom with shared living areas.",
   price_per_night: 150,
   capacity: 20,
@@ -100,7 +100,7 @@ flat_5.save!
 
 flat_6 = Flat.new(
   name: "Uluwatu Cliff Guest Suite",
-  location: "Uluwatu",
+  location: "Uluwatu, Bali, Indonesia",
   description: "A mini apartment within the clock tower apartment at St Pancras Station, with its own en suite bathroom and kitchen and sitting area.",
   price_per_night: 250,
   capacity: 10,
