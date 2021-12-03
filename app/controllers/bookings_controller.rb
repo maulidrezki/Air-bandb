@@ -9,7 +9,7 @@ class BookingsController < ApplicationController
     if @booking.save
       redirect_to dashboard_path
     else
-      render 'flats/show'
+      redirect_to new_user_session_path
     end
   end
 
