@@ -7,20 +7,21 @@
   <div class="search-bar d-flex">
     <%= text_field_tag :query,
       params[:query],
-      class: "form-control",
+      class: "form-control search-bar-parameter border-right",
       placeholder: "Find a flat"
     %>
     <%= text_field_tag :capacity,
       params[:capacity],
-      class: "form-control",
+      class: "form-control search-bar-parameter border-right",
       placeholder: "Capacity"
     %>
     <%= text_field_tag :price_per_night,
       params[:price_per_night],
-      class: "form-control",
+      class: "form-control search-bar-parameter",
       placeholder: "Price per night"
     %>
-    <%= submit_tag "Search", class: "btn btn-primary" %>
+    <button name="button" type="submit" class="btn btn-flat">
+        <i class="fas fa-search"></i></button>
   </div>
   <% end %>
 <% end %>
