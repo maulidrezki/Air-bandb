@@ -59,8 +59,10 @@ class FlatsController < ApplicationController
 
   def update
     @flat = Flat.find(params[:id])
-    params[:flat][:photos].each do |photo|
-      @flat.photos.attach(photo)
+    if params[:flat][:photos].present?
+      params[:flat][:photos].each do |photo|
+        @flat.photos.attach(photo)
+      end
     end
     @flat.update(update_params)
     redirect_to flat_path(@flat)
