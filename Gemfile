@@ -74,3 +74,6 @@ gem 'faker'
 
 # geocode
 gem 'geocoder'
+
+# pundit
+gem 'pundit'

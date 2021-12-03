@@ -23,7 +23,9 @@
             <div class="flat-card-actions">
               <%= link_to 'More info', flat_path(flat) %>
               <%= link_to "Edit", edit_flat_path(flat) %>
-              <%= link_to "Delete", flat_path(flat), method: :delete,  data: { confirm: "Are you sure you want to delete this flat? You will delete all the related bookings." }%>
+              <% if policy(flat).destroy? %>
+                <%= link_to "Delete", flat_path(flat), method: :delete,  data: { confirm: "Are you sure you want to delete this flat? You will delete all the related bookings." }%>
+              <% end %>
             </div>
           </div>
         </div>

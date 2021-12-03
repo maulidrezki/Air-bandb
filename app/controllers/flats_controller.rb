@@ -1,11 +1,13 @@
 class FlatsController < ApplicationController
 
   def index
+    @flats = policy_scope(Flat).order(created_at: :desc)
+
     if params[:query].present?
       @query = params[:query]
-      @flats = Flat.where("name iLike :query OR location iLike :query OR description iLike :query", query: "%#{params[:query]}%")
+      @flats = @flats.where("name iLike :query OR location iLike :query OR description iLike :query", query: "%#{params[:query]}%")
     else
-      @flats = Flat.all
+      @flats = @flats.all
     end
 
     if params[:capacity].present?
@@ -63,6 +65,7 @@ class FlatsController < ApplicationController
 
   def destroy
     @flat = Flat.find(params[:id])
+    authorize @flat
     @flat.destroy
     redirect_to dashboard_path
   end
